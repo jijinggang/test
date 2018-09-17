@@ -52,5 +52,32 @@
  <p>1</p>
  <p>1</p>
  <p>1</p>
+ <script>
+	window.onload=function () {  
+	document.addEventListener('touchstart',function (event) {  
+		if(event.touches.length>1){  
+			event.preventDefault();  
+			event.cancelable = true;
+		}  
+	},false)  
+
+	document.addEventListener('click',function (event) {  
+		if(event.button >=1 ){  
+			event.preventDefault();
+			event.cancelable = true;
+		}  
+	},false)  
+
+	var lastTouchEnd=0;  
+	document.addEventListener('touchend',function (event) {  
+		var now=(new Date()).getTime();  
+		if(now-lastTouchEnd<=300){  
+			event.preventDefault();  
+			event.cancelable = true; 
+		}  
+		lastTouchEnd=now;  
+	},false)  
+}
+</script>	
  </body>
 </html>
