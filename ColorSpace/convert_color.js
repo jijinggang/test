@@ -1,4 +1,4 @@
-function gamma(linear){
+export function gamma(linear){
   linear = linear / 256;
 var s;
 if (linear <= 0.0031308) {
@@ -9,7 +9,7 @@ if (linear <= 0.0031308) {
  return Math.round(s*256);
 }
 
-function linear(srgb){
+export function linear(srgb){
   srgb = srgb/256;
 var linear;
 if (srgb <= 0.04045) {
@@ -20,5 +20,5 @@ if (srgb <= 0.04045) {
 return Math.round(linear*256);
 }
 
-console.log("gamma(10)=", gamma(10));
-console.log("linear(57)=", linear(56));
+//console.log("gamma(10)=", gamma(10));
+//console.log("linear(57)=", linear(56));
