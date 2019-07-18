@@ -31,25 +31,33 @@ var App = function (_React$Component) {
     }
 
     _createClass(App, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                { className: 'App' },
+                "div",
+                null,
                 React.createElement(
-                    'p',
-                    null,
-                    '\u7EBF\u6027\u7A7A\u95F4(0~255):',
-                    React.createElement('input', { value: this.state.linearColor, onChange: this.onChangeLinear }),
-                    ' ',
+                    "div",
+                    { className: "field" },
+                    React.createElement(
+                        "label",
+                        { className: "label" },
+                        "\u7EBF\u6027\u7A7A\u95F4(0~255):"
+                    ),
+                    React.createElement("input", { className: "input", value: this.state.linearColor, onChange: this.onChangeLinear }),
+                    " ",
                     (this.state.linearColor / 256).toFixed(5)
                 ),
                 React.createElement(
-                    'p',
-                    null,
-                    '\u4F3D\u99AC\u7A7A\u95F4(0~255):',
-                    React.createElement('input', { value: this.state.gammaColor, onChange: this.onChangeGamma }),
-                    ' ',
+                    "div",
+                    { className: "field" },
+                    React.createElement(
+                        "label",
+                        { className: "label" },
+                        "\u4F3D\u99AC\u7A7A\u95F4(0~255):"
+                    ),
+                    React.createElement("input", { className: "input", value: this.state.gammaColor, onChange: this.onChangeGamma }),
+                    " ",
                     (this.state.gammaColor / 256).toFixed(5)
                 )
             );

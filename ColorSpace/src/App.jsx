@@ -7,14 +7,19 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div className="App">
-                <p>线性空间(0~255):<input value={this.state.linearColor} onChange={this.onChangeLinear} ></input> {(this.state.linearColor / 256).toFixed(5)}</p>
-                <p>伽馬空间(0~255):<input value={this.state.gammaColor} onChange={this.onChangeGamma} ></input> {(this.state.gammaColor / 256).toFixed(5)}</p>
+            <div>
+                <div className="field">
+                    <label className="label">线性空间(0~255):</label>
+                    <input className="input" value={this.state.linearColor} onChange={this.onChangeLinear} ></input> {(this.state.linearColor / 256).toFixed(5)}
+                </div>
+                <div className="field">
+                    <label className="label">伽馬空间(0~255):</label>
+                    <input className="input" value={this.state.gammaColor} onChange={this.onChangeGamma} ></input> {(this.state.gammaColor / 256).toFixed(5)}
+                </div>
             </div>
-
         );
     }
-    
+
     onChangeLinear = (e) => {
         let l = e.target.value;
         this.setState({ linearColor: l, gammaColor: gamma(l) });
